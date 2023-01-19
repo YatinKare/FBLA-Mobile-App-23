@@ -39,3 +39,8 @@ social media application
 a bug reporting system
 should a user later
 discover a bug
+
+# URls
+- https://animista.net/
+- https://neumorphism.io/
+- 
