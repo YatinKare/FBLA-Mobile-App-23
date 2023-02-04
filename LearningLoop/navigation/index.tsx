@@ -64,6 +64,7 @@ function BottomTabNavigator() {
       initialRouteName="TabOne"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
+        tabBarIconStyle: { display: "none" }
       }}>
       <BottomTab.Screen
         name="TabOne"
