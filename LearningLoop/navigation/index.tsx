@@ -72,7 +72,7 @@ function BottomTabNavigator() {
           title: 'Tab One',
           //tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
-            <Pressable
+            <Pressable 
               onPress={() => navigation.navigate('Modal')}
               style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
