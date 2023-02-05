@@ -12,12 +12,12 @@ import { ColorSchemeName, Pressable } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import ModalScreen from '../screens/ModalScreen';
-import NotFoundScreen from '../screens/NotFoundScreen';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
+import ModalScreen from '../screens/Modal/ModalScreen';
+import NotFoundScreen from '../screens/NotFound/NotFoundScreen';
+import TabOneScreen from '../screens/TabOne/TabOneScreen';
+import TabTwoScreen from '../screens/TabTwo/TabTwoScreen';
 
-import CalendarScreen from '../screens/CalendarScreen';
+import CalendarScreen from '../screens/Calendar/CalendarScreen';
 
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
@@ -94,6 +94,7 @@ function BottomTabNavigator() {
         component={TabTwoScreen}
         options={{
           title: 'Tab Two',
+          headerShown: false,
           //tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
@@ -102,6 +103,7 @@ function BottomTabNavigator() {
         component={CalendarScreen}
         options={{
           title: 'Calendar',
+          headerShown: false,
           //tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
