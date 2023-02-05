@@ -30,10 +30,16 @@ const linking: LinkingOptions<RootStackParamList> = {
               CalendarScreen: 'three',
             }
           },
+          Upcoming: {
+            screens: {
+              UpcomingScreen: 'four',
+            }
+          },
         },
       },
       Modal: 'modal',
       NotFound: '*',
+      Login: 'login',
     },
   },
 };

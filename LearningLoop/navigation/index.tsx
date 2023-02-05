@@ -22,10 +22,24 @@ import CalendarScreen from '../screens/Calendar/CalendarScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import { View } from '../components/Themed';
-import { home } from '../screens/Login/LoginScreen';
+//import { home } from '../screens/Login/LoginScreen';
+
+import { UserContext } from '../screens/Login/LoginScreen';
 import LoginScreen from '../screens/Login/LoginScreen';
 
+import { useState, useEffect, useContext } from 'react';
+
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import UpcomingScreen from '../screens/Upcoming/UpcomingScreen';
+
+
+
+
+
+
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
+
+  
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
@@ -40,21 +54,43 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
  * https://reactnavigation.org/docs/modal
  */
 const Stack = createNativeStackNavigator<RootStackParamList>();
-
+/*
+      { home ?  (
+              ) : (
+*/
 
 function RootNavigator() {
+  const { username, setUsername } = useContext(UserContext);
+
+  useEffect(() => {
+    const getUserData = async () => {
+      try {
+        const storedUsername  = await AsyncStorage.getItem('username');
+        if(typeof storedUsername === "string"){
+          setUsername(storedUsername);
+        }
+        console.log(username);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getUserData();
+  }, []);
+
+
   return (
     <Stack.Navigator>
-      { home ?  (
+
         <Stack.Screen name="Login" component={LoginScreen}/> 
-      ) : (
+
         <>
-      <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: true, headerTitle: "",
+      <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: true,
         headerLeft: () => (
           <Button
-            title="LL"
-            color="#000"
+            title={username}
+            color="#fff"
           />
+
         ),    
     }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
@@ -62,7 +98,6 @@ function RootNavigator() {
         <Stack.Screen name="Modal" component={ModalScreen} />
       </Stack.Group>
       </>
-    )}
     </Stack.Navigator>
   );
 }
@@ -120,6 +155,15 @@ function BottomTabNavigator() {
         component={CalendarScreen}
         options={{
           title: 'Calendar',
+          headerShown: false,
+          //tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+       <BottomTab.Screen
+        name="Upcoming"
+        component={UpcomingScreen}
+        options={{
+          title: 'Upcoming',
           headerShown: false,
           //tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
