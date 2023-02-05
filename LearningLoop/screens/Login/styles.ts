@@ -13,7 +13,16 @@ const styles = StyleSheet.create({
         marginBottom: 40,
     },
     inputView: {
-        
+        width: "80%",
+        backgroundColor: "#3AB4BA",
+        borderRadius: 25,
+        marginBottom: 20,
+        justifyContent: 'center',
+        padding: 20
+    },
+    inputText: {
+        height: 50,
+        color: "white"
     }
     
 })

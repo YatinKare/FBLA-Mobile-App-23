@@ -21,6 +21,9 @@ import CalendarScreen from '../screens/Calendar/CalendarScreen';
 
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import { View } from '../components/Themed';
+import { home } from '../screens/Login/LoginScreen';
+import LoginScreen from '../screens/Login/LoginScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -38,9 +41,14 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
  */
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
+
 function RootNavigator() {
   return (
     <Stack.Navigator>
+      { home ?  (
+        <Stack.Screen name="Login" component={LoginScreen}/> 
+      ) : (
+        <>
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: true, headerTitle: "",
         headerLeft: () => (
           <Button
@@ -53,6 +61,8 @@ function RootNavigator() {
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
       </Stack.Group>
+      </>
+    )}
     </Stack.Navigator>
   );
 }
@@ -118,17 +128,4 @@ function BottomTabNavigator() {
   );
 }
 
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
-}) {
-  return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
-}
 
-const goHome = () =>{
-
-
-}
