@@ -8,7 +8,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import { ColorSchemeName, Pressable } from 'react-native';
+import { ColorSchemeName, Pressable, Button } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
@@ -27,7 +27,7 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
     <NavigationContainer
       linking={LinkingConfiguration}
       theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <RootNavigator />
+      <RootNavigator/>
     </NavigationContainer>
   );
 }
@@ -41,7 +41,14 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: true, title: 'LearningLoop' }} />
+      <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: true, headerTitle: "",
+        headerLeft: () => (
+          <Button
+            title="LL"
+            color="#000"
+          />
+        ),    
+    }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
@@ -95,7 +102,7 @@ function BottomTabNavigator() {
         options={{
           title: 'Tab Two',
           headerShown: false,
-          //tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          //tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,        
         }}
       />
       <BottomTab.Screen
@@ -119,4 +126,9 @@ function TabBarIcon(props: {
   color: string;
 }) {
   return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
+}
+
+const goHome = () =>{
+
+
 }
