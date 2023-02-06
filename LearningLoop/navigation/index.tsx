@@ -141,7 +141,19 @@ function TeacherTabNavigator() {
   const colorScheme = useColorScheme();
 
   return (
-    <TeacherTabs.Navigator initialRouteName='Announcements' screenOptions={{headerLeft: () => (<Text style={{marginLeft:10, fontSize:20}}>LL</Text>),}}>
+    <TeacherTabs.Navigator initialRouteName='Announcements' screenOptions={{
+      headerLeft: () => (
+        <Text style={{ marginLeft: 10, fontSize: 20 }}>
+          LL
+        </Text>
+      ),
+      tabBarIconStyle: {
+        display: 'none'
+      },
+      tabBarLabelStyle: {
+        fontSize: 20
+      }
+    }}>
       <TeacherTabs.Screen name="Announcements" component={AnnouncementsScreen} options={{}}/>
       <TeacherTabs.Screen name="Attendance" component={AttendanceScreen} />
     </TeacherTabs.Navigator>
@@ -152,6 +164,8 @@ const ParentTabs = createBottomTabNavigator<ParentTabParamList>();
 
 function ParentTabNavigator() {
   const colorScheme = useColorScheme();
+  let textColor = colorScheme === "dark" ? "blue" : "green";
+  console.log(colorScheme);
 
   return (
     <ParentTabs.Navigator initialRouteName='Photos' screenOptions={{
@@ -164,9 +178,12 @@ function ParentTabNavigator() {
         </Text>),
       tabBarIconStyle: {
         display: "none"
-      }
+      },      
+      tabBarLabelStyle: {
+        fontSize: 20,
+      },
     }}>
-      <ParentTabs.Screen name="Photos" component={PhotosScreen} />
+      <ParentTabs.Screen name="Photos" component={PhotosScreen}/>
       <ParentTabs.Screen name="Upcoming" component={UpcomingScreen} />
       <ParentTabs.Screen name="Settings" component={SettingsScreen} />
     </ParentTabs.Navigator>
