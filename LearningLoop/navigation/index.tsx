@@ -98,9 +98,6 @@ function RootNavigator() {
   );
 
 
-
-
-
   /*return (
     <Stack.Navigator>
         <Stack.Screen name="Login" component={LoginScreen}/> 
