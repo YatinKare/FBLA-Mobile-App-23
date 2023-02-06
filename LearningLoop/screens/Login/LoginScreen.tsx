@@ -38,6 +38,7 @@ function LoginScreen({ setLoggedInUser }: { Props }) {
       setLoggedInUser('teacher');
       navigation.navigate('Teacher', {name: username});
     } else if (username === 'parent' && password === 'parent') {
+      //console.log(navigation.());
       setLoggedInUser('parent');
       navigation.navigate('Parent', {name: username});
     } else {

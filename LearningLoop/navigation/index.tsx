@@ -21,7 +21,7 @@ import CalendarScreen from '../screens/Calendar/CalendarScreen';
 
 import { TouchableOpacity } from 'react-native';
 
-import { RootStackParamList, RootTabParamList, RootTabScreenProps, TeacherTabParamList } from '../types';
+import { RootStackParamList, RootTabParamList, RootTabScreenProps, TeacherTabParamList, ParentTabParamList } from '../types';
 //import LinkingConfiguration from './LinkingConfiguration';
 import { Text, View } from '../components/Themed';
 //import { home } from '../screens/Login/LoginScreen';
@@ -70,7 +70,26 @@ function RootNavigator() {
 
 
   if (loggedInUser === null) {
-    return <LoginScreen setLoggedInUser={setLoggedInUser} />;
+    return (
+    <Stack.Navigator>
+      <Stack.Screen name="Login" component={LoginScreen} initialParams={{setLoggedInUser: {setLoggedInUser}}}>
+      </Stack.Screen>
+      <Stack.Screen 
+          name="Teacher" 
+          component={TeacherTabNavigator} 
+          options={{
+            headerShown: false
+          }}
+          />
+        <Stack.Screen name="Parent" 
+          component={ParentTabNavigator} 
+          options={{ 
+            headerShown: false
+          }}
+          />
+    </Stack.Navigator>
+    )
+    //return <LoginScreen setLoggedInUser={setLoggedInUser} />;
   }
 
   return (
