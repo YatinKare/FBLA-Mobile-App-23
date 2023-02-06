@@ -7,9 +7,36 @@
 import { LinkingOptions } from '@react-navigation/native';
 import * as Linking from 'expo-linking';
 
-import { RootStackParamList } from '../types';
+import { RootStackParamList, TeacherStackParamList } from '../types';
+import { TeacherTabParamList } from '../types';
+import { ParentTabParamList } from '../types';
 
-const linking: LinkingOptions<RootStackParamList> = {
+
+
+export const teacherlinking: LinkingOptions<TeacherStackParamList> = {
+  prefixes: [Linking.createURL('/Teacher/')],
+  config: {
+    screens: {
+      Teacher: {
+        screens: {
+          Announcements: {
+            screens: {
+              AnnouncementsScreen: 'Announcements,'
+            }
+          },
+          Attendance: {
+            screens: {
+              AttendanceScreen: 'Attendance',
+            }
+          }
+        },
+      }
+    }
+  }
+
+}
+
+export const linking: LinkingOptions<RootStackParamList> = {
   prefixes: [Linking.createURL('/')],
   config: {
     screens: {
@@ -27,12 +54,12 @@ const linking: LinkingOptions<RootStackParamList> = {
           },
           Calendar: {
             screens: {
-              CalendarScreen: 'three',
+              CalendarScreen: 'Calendar',
             }
           },
           Upcoming: {
             screens: {
-              UpcomingScreen: 'four',
+              UpcomingScreen: 'Upcoming',
             }
           },
         },
@@ -44,4 +71,3 @@ const linking: LinkingOptions<RootStackParamList> = {
   },
 };
 
-export default linking;

@@ -19,30 +19,35 @@ import TabTwoScreen from '../screens/TabTwo/TabTwoScreen';
 
 import CalendarScreen from '../screens/Calendar/CalendarScreen';
 
-import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
-import LinkingConfiguration from './LinkingConfiguration';
-import { View } from '../components/Themed';
+import { TouchableOpacity } from 'react-native';
+
+import { RootStackParamList, RootTabParamList, RootTabScreenProps, TeacherTabParamList } from '../types';
+//import LinkingConfiguration from './LinkingConfiguration';
+import { Text, View } from '../components/Themed';
 //import { home } from '../screens/Login/LoginScreen';
 
-import { UserContext } from '../screens/Login/LoginScreen';
+// import { UserContext } from '../screens/Login/LoginScreen';
 import LoginScreen from '../screens/Login/LoginScreen';
 
 import { useState, useEffect, useContext } from 'react';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import UpcomingScreen from '../screens/Upcoming/UpcomingScreen';
+//import UpcomingScreen from '../screens/Upcoming/UpcomingScreen';
+
+import AnnouncementsScreen from '../screens/TeacherHome/Announcements/AnnouncementsScreen'
+import AttendanceScreen from '../screens/TeacherHome/Attendance/AttendanceScreen'
 
 
-
-
-
+import UpcomingScreen from '../screens/ParentHome/Upcoming/UpcomingScreen';
+import PhotosScreen from '../screens/ParentHome/Photos/PhotosScreen';
+import SettingsScreen from '../screens/ParentHome/Settings/SettingsScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
 
   
   return (
     <NavigationContainer
-      linking={LinkingConfiguration}
+      //linking={LinkingConfiguration}
       theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <RootNavigator/>
     </NavigationContainer>
@@ -60,29 +65,45 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 */
 
 function RootNavigator() {
-  const { username, setUsername } = useContext(UserContext);
+  //const { username, setUsername } = useContext(UserContext);
+  const [loggedInUser, setLoggedInUser] = useState<'teacher' | 'parent' | null>(null);
 
-  useEffect(() => {
-    const getUserData = async () => {
-      try {
-        const storedUsername  = await AsyncStorage.getItem('username');
-        if(typeof storedUsername === "string"){
-          setUsername(storedUsername);
-        }
-        console.log(username);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getUserData();
-  }, []);
 
+  if (loggedInUser === null) {
+    return <LoginScreen setLoggedInUser={setLoggedInUser} />;
+  }
 
   return (
     <Stack.Navigator>
+       {loggedInUser === 'teacher' && (
+          <Stack.Screen 
+          name="Teacher" 
+          component={TeacherTabNavigator} 
+          options={{
+            headerShown: false
+          }}
+          />
+        )}
+        {loggedInUser === 'parent' && (
+          <Stack.Screen name="Parent" 
+          component={ParentTabNavigator} 
+          options={{ 
+            headerShown: false
+          }}
+          />
+        )}
+        
+     {/* <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: true,headerLeft: () => ( <Button title={"GL"}color="#fff"/>),    }} />*/}
+    </Stack.Navigator>
+  );
 
+
+
+
+
+  /*return (
+    <Stack.Navigator>
         <Stack.Screen name="Login" component={LoginScreen}/> 
-
         <>
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: true,
         headerLeft: () => (
@@ -99,13 +120,64 @@ function RootNavigator() {
       </Stack.Group>
       </>
     </Stack.Navigator>
-  );
+  );*/
 }
+/*
+const LogStack = createNativeStackNavigator
 
+function LoginNavigator() {
+  
+
+  if (loggedInUser === null) {
+    return <LoginScreen setLoggedInUser={setLoggedInUser} />;
+  }
+}
+*/
 /**
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
  * https://reactnavigation.org/docs/bottom-tab-navigator
  */
+
+const TeacherTabs = createBottomTabNavigator<TeacherTabParamList>();
+
+function TeacherTabNavigator() {
+  const colorScheme = useColorScheme();
+
+  return (
+    <TeacherTabs.Navigator initialRouteName='Announcements' screenOptions={{headerLeft: () => (<Text style={{marginLeft:10, fontSize:20}}>LL</Text>),}}>
+      <TeacherTabs.Screen name="Announcements" component={AnnouncementsScreen} options={{}}/>
+      <TeacherTabs.Screen name="Attendance" component={AttendanceScreen} />
+    </TeacherTabs.Navigator>
+  );
+}
+
+const ParentTabs = createBottomTabNavigator<ParentTabParamList>();
+
+function ParentTabNavigator() {
+  const colorScheme = useColorScheme();
+
+  return (
+    <ParentTabs.Navigator initialRouteName='Photos' screenOptions={{
+      headerLeft: () => (
+        <Text style={{
+          marginLeft: 10,
+          fontSize: 20
+        }}>
+          LL
+        </Text>),
+      tabBarIconStyle: {
+        display: "none"
+      }
+    }}>
+      <ParentTabs.Screen name="Photos" component={PhotosScreen} />
+      <ParentTabs.Screen name="Upcoming" component={UpcomingScreen} />
+      <ParentTabs.Screen name="Settings" component={SettingsScreen} />
+    </ParentTabs.Navigator>
+  );
+}
+
+
+/*
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 function BottomTabNavigator() {
@@ -127,7 +199,7 @@ function BottomTabNavigator() {
           //tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Pressable 
-              onPress={() => navigation.navigate('Modal')}
+              onPress={() =>/navigation.navigate('Modal') console.log("yay!")}
               style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
               })}>
@@ -171,5 +243,5 @@ function BottomTabNavigator() {
     </BottomTab.Navigator>
   );
 }
-
+*/
 

@@ -1,86 +1,84 @@
 import { Text, View } from '../../components/Themed';
-import { RootTabScreenProps } from '../../types';
 
 import React, { useState } from 'react';
-import { useContext, createContext, useEffect  } from 'react';
 
-import { Button, TextInput } from 'react-native';
+import { TextInput, TouchableOpacity } from 'react-native';
 import styles from "../Login/styles"
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { NavigationProp } from '@react-navigation/core';
+import { useNavigation } from '@react-navigation/native';
+interface Props {
+  setLoggedInUser: (user: 'teacher' | 'parent') => void;
+}
 
-//let home: boolean = true;
 
-type Props = {
-    navigation: NavigationProp<Record<string, object | undefined>, string, any, any>;
-  };
 
-export const UserContext = createContext({
-    username: '',
-    password: '',
-    setUsername: (username: string) => {},
-    setPassword: (password: string) => {},
-});
-
-function LoginScreen({navigation}: Props) {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    
-    useEffect(() => {
-        AsyncStorage.getItem('username').then((username) => {
-          if (username) {
-            setUsername(username);
+function LoginScreen({ setLoggedInUser }: { Props }) {
+  const navigation = useNavigation();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  /*
+  useEffect(() => {
+      AsyncStorage.getItem('username').then((username) => {
+        if (username) {
+          setUsername(username);
+        }
+      });
+      AsyncStorage.getItem('password').then((password) => {
+          if (password) {
+            setPassword(password);
           }
         });
-        AsyncStorage.getItem('password').then((password) => {
-            if (password) {
-              setPassword(password);
-            }
-          });
-      }, []);
+    }, []);
+    */
 
 
 
-    const handleLogin = async () => {
-        try {
-          await AsyncStorage.setItem('username', username);
-          await AsyncStorage.setItem('password', password);
-          console.log(username);
-          navigation.navigate('Root');
-        } catch (error) {
-          console.log(error);
-        }
-      };
-    
+  const handleLogin = () => {
+    if (username === 'teacher' && password === 'teacher') {
+      setLoggedInUser('teacher');
+      navigation.navigate('Teacher', {name: username});
+    } else if (username === 'parent' && password === 'parent') {
+      setLoggedInUser('parent');
+      navigation.navigate('Parent', {name: username});
+    } else {
+      // handle invalid login
+      console.log("err");
+    }
+  };
 
-        return (
-            <UserContext.Provider value={{ username, password, setUsername, setPassword }}>
-                <View style={styles.container}>
-                <Text style={styles.title}>Login</Text>
-                <View style={styles.inputView}>
-                    <TextInput 
-                    style={styles.inputText}
-                    placeholder="Username"
-                    placeholderTextColor="#003f5c"
-                    onChangeText={(text) => setUsername(text)}
-                    />
-                </View>
-                <View style={styles.inputView}>
-                    <TextInput 
-                    style={styles.inputText}
-                    placeholder="Password"
-                    placeholderTextColor="#003f5c"
-                    onChangeText={(text) => setPassword(text)}
-                    />
-                </View>
-                <Button title="Login" onPress={handleLogin} />
-                </View>
-            </UserContext.Provider>
-    );
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Login</Text>
+      <>
+      <Text style={styles.description}>Welcome to LearningLoop</Text>
+      </>
+      <TextInput
+        style={styles.inputText}
+        placeholder="Username"
+        placeholderTextColor="white"
+        onChangeText={setUsername}
+        value={username}
+      />
+      <TextInput
+        style={styles.inputText}
+        placeholder="Password"
+        placeholderTextColor="white"
+        onChangeText={setPassword}
+        value={password}
+      />
+      <>
+        <TouchableOpacity style={styles.button} onPress={handleLogin}>
+          <>
+            <Text>Login</Text>
+          </>
+        </TouchableOpacity>
+      </>
+    </View>
+  );
 
 }
 
 
 
-export {LoginScreen as default}
+export { LoginScreen as default }
