@@ -10,7 +10,7 @@ interface Props {
   setLoggedInUser: (user: 'teacher' | 'parent') => void;
 }
 
-
+ 
 
 function LoginScreen({ setLoggedInUser }: { Props }) {
   const navigation = useNavigation();
