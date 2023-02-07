@@ -17,8 +17,10 @@ export default function SettingsScreen(
     const navigation = useNavigation();
     return (
     <View style={styles.container}>
-        <TouchableOpacity style={styles.button} onPress={() => 
+        <TouchableOpacity style={styles.button} onPress={() => {
         navigation.navigate("Login")
+        console.log(navigation.getState());
+      }
           }>
             <Text>Hallo</Text>
         </TouchableOpacity>

@@ -4,16 +4,23 @@ import React, { useState } from 'react';
 
 import { TextInput, TouchableOpacity } from 'react-native';
 import styles from "../Login/styles"
-
 import { useNavigation } from '@react-navigation/native';
+/*
+import { ParentStackParamList, ParentStackScreenProps, ParentTabParamList, RootStackParamList, RootStackScreenProps } from '../../types';
+
+import { NavigationProp, useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+*/
+
 interface Props {
   setLoggedInUser: (user: 'teacher' | 'parent') => void;
 }
 
  
 
-function LoginScreen({ setLoggedInUser }: { Props }) {
-  const navigation = useNavigation();
+const LoginScreen = ({ setLoggedInUser }: { Props }) => {
+   const navigation = useNavigation();
+  //const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   /*
@@ -33,7 +40,12 @@ function LoginScreen({ setLoggedInUser }: { Props }) {
 
 
 
+
   const handleLogin = () => {
+    //const {index, routes} = this.props.navigation.dangerouslyGetState();
+    //const currentRoute = routes[index].name;
+    //console.log('current screen', currentRoute);
+    console.log(navigation.getState());
     if (username === 'teacher' && password === 'teacher') {
       setLoggedInUser('teacher');
       navigation.navigate('Teacher', {name: username});

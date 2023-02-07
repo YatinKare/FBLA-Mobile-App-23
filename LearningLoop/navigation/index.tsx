@@ -67,29 +67,18 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 function RootNavigator() {
   //const { username, setUsername } = useContext(UserContext);
   const [loggedInUser, setLoggedInUser] = useState<'teacher' | 'parent' | null>(null);
+  //const checkLogin = useNavigationParam('checkLogin');
+  
 
-
+  
+ 
   if (loggedInUser === null) {
-    return (
+    /*return (
     <Stack.Navigator>
-      <Stack.Screen name="Login" component={LoginScreen} initialParams={{setLoggedInUser: {setLoggedInUser}}}>
-      </Stack.Screen>
-      <Stack.Screen 
-          name="Teacher" 
-          component={TeacherTabNavigator} 
-          options={{
-            headerShown: false
-          }}
-          />
-        <Stack.Screen name="Parent" 
-          component={ParentTabNavigator} 
-          options={{ 
-            headerShown: false
-          }}
-          />
+      <Stack.Screen name="Login" component={LoginScreen} initialParams={{user: loggedInUser}}/>
     </Stack.Navigator>
-    )
-    //return <LoginScreen setLoggedInUser={setLoggedInUser} />;
+    )*/
+    return <LoginScreen setLoggedInUser={setLoggedInUser} />;
   }
 
   return (

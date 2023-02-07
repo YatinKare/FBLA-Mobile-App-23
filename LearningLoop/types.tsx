@@ -62,6 +62,7 @@ export type RootTabParamList = {
   TabTwo: undefined;
   Calendar: undefined;
   Upcoming: undefined;
+  Login: undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
@@ -78,3 +79,4 @@ export type ParentTabScreenProps<Screen extends keyof ParentTabParamList> = Comp
   BottomTabScreenProps<ParentTabParamList, Screen>,
   NativeStackScreenProps<ParentTabParamList>
 >;
+
