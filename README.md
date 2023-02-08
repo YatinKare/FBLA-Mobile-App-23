@@ -8,7 +8,10 @@ Download from the App Store, Google Play Store, or go to LearningLoop.com.
 Clone this GitHub Repo into your prefered IDE.
 
 #### Requirements
-* asdfas
+* Expo
+* React Native
+* React Navigator
+* TypeScript/JavaScript
 
 ## License
 This project is licensed under the terms of the MIT license .
