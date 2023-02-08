@@ -7,5 +7,8 @@ Download from the App Store, Google Play Store, or go to LearningLoop.com.
 ### Local Installation
 Clone this GitHub Repo into your prefered IDE.
 
+#### Requirements
+* asdfas
+
 ## License
 This project is licensed under the terms of the MIT license .
