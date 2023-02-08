@@ -1,5 +1,5 @@
-# FBLA-Mobile-App-23
-- Test
+# LearningLoop
+Learning Loop is an app that allows parents and teachers to communicate quickly and effectively. Parents can send notices to teachers to tell them that a student will be absent. The school can also send updates and upcoming events to keep the parents of students notified.
 # Rubric
 ## Application ReadaBility
 - Packaging is clear to the
