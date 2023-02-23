@@ -1,0 +1,30 @@
+[{
+    "Sunday":{
+        "title": "Field Trip to the Zoo!",
+        "time": "10:00 AM - 2:30 PM"
+    },
+    "Monday":{
+        "title": "Field Trip to the Zoo!",
+        "time": "10:00 AM - 2:30 PM"
+    },
+    "Tuesday":{
+        "title": "Field Trip to the Zoo!",
+        "time": "10:00 AM - 2:30 PM"
+    },
+    "Wednesday":{
+        "title": "Field Trip to the Zoo!",
+        "time": "10:00 AM - 2:30 PM"
+    },
+    "Thursday":{
+        "title": "Field Trip to the Zoo!",
+        "time": "10:00 AM - 2:30 PM"
+    },
+    "Friday":{
+        "title": "Field Trip to the Zoo!",
+        "time": "10:00 AM - 2:30 PM"
+    },
+    "Saturday":{
+        "title": "Field Trip to the Zoo!",
+        "time": "10:00 AM - 2:30 PM"
+    }
+}]

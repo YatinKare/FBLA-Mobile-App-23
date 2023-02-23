@@ -117,6 +117,9 @@ export default CalendarScreen;
 import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, ScrollView } from 'react-native';
 import CalendarCard from '../components/CalendarCard';
+import data from '../assets/calendar.json';
+let myMap = new Map(Object.entries(data));
+console.log(myMap.get("Sunday")?.title);
 
 const CalendarScreen = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -192,25 +195,24 @@ const CalendarScreen = () => {
       <View style={styles.lineSeparator} />
 
       <ScrollView horizontal>
-        <View style={styles.week}>
-          {daysOfWeek.map((day) => (
-            <View style={styles.dayContainer} key={day}>
-              <Text style={styles.dayText}>{day}</Text>
-              <Text>{selectedDate.toLocaleDateString('en-US', { weekday: 'long' })}</Text>
-              <Text style={styles.subheading}>
-                {selectedDate.toLocaleDateString('en-US', {
-                  weekday: 'long',
-                  month: 'long',
-                  day: 'numeric',
-                  year: 'numeric',
-                })}
-              </Text>
-              <CalendarCard bannerColor="blue" title="Field Trip to the Zoo!" time="10:00 AM - 2:30 PM" />
-              <CalendarCard bannerColor="green" title="Team Meeting" time="3:00 PM - 4:30 PM" />
-            </View>
-          ))}
-        </View>
-      </ScrollView>
+              <View style={styles.week}>
+                  {dates.map((day) => (
+                      <View style={styles.dayContainer} key={day.toLocaleDateString('en-US', { weekday: 'long' })}>
+                          <Text style={styles.dayText}>{day.toLocaleDateString('en-US', {
+                              weekday: 'long',
+                              month: 'long',
+                              day: 'numeric',
+                              year: 'numeric',
+                          })}</Text>
+                          {data.map((day) => {
+                            console.log(day);
+                          })}
+                          <CalendarCard bannerColor="blue" title="Field Trip to the Zoo!" time="10:00 AM - 2:30 PM" />
+                          <CalendarCard bannerColor="green" title="Team Meeting" time="3:00 PM - 4:30 PM" />
+                      </View>
+                  ))}
+              </View>
+          </ScrollView>
 
 
       {/*<View style={styles.calendarCard}>
