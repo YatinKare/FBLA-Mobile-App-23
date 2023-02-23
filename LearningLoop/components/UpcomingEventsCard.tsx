@@ -23,15 +23,15 @@ const UpcomingEventsCard: React.FC<Props> = ({photo, title, description}) => {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#ffffff',
-        borderRadius: 10,
-        marginHorizontal: 16,
-        marginVertical: 8,
-        overflow: 'hidden',
-        flexDirection: 'row',
-        width: '90%',
-        alignSelf: "center",
+  container: {
+    backgroundColor: '#000',
+    borderRadius: 10,
+    marginHorizontal: 16,
+    marginVertical: 8,
+    overflow: 'hidden',
+    flexDirection: 'row',
+    width: '90%',
+    alignSelf: "center",
       },
       imageContainer: {
         flex: 1,
@@ -49,9 +49,11 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         marginBottom: 8,
+        color: 'white',
       },
       description: {
         fontSize: 16,
+        color: "white",
       },
 })
 

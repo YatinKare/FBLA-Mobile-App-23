@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import CalendarScreen from './screens/Calendar';
 import PhotosScreen from './screens/Photos';
 import UpcomingEventsScreen from './screens/UpcomingEvents';
 
 export default function App() {
   return (
-    <PhotosScreen />
+    <CalendarScreen />
   );
 
 
