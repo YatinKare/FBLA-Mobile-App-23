@@ -1,0 +1,80 @@
+[
+    {
+        "day": "Sunday",
+        "activities": [
+            {
+                "title": "Parent Update Meeting",
+                "timing": "4:30 PM - 5:30 PM"
+            }
+        ],
+        "color": "blue"
+    },
+    {
+        "day": "Monday",
+        "activities": [
+            {
+                "title": "Jake's Birthday Party",
+                "timing": "1:00 PM - 2:00 PM"
+            }
+        ],
+        "color": "green"
+    },
+    {
+        "day": "Tuesday",
+        "activities": [
+            {
+                "title": "Reptile Handler Visit",
+                "timing": "12:00 PM - 2:30 PM"
+            }
+        ],
+        "color": "green"
+    },
+    {
+        "day": "Wednesday",
+        "activities": [
+            {
+                "title": "Field Trip Dropoff",
+                "timing": "6:30 AM"
+            },
+            {
+                "title": "Field Trip Pickup",
+                "timing": "3:30 PM"
+            }
+        ],
+        "color": "green"
+    },
+    {
+        "day": "Thursday",
+        "activities": [
+            {
+                "title": "Parent Teacher Conferences",
+                "timing": "All Day"
+            },
+            {
+                "title": "PTA Meeting",
+                "timing": "6:00 PM - 7:00 PM"
+            }
+        ],
+        "color": "green"
+    },
+    {
+        "day": "Friday",
+        "activities": [
+            {
+                "title": "Pajama Day",
+                "timing": "All Day"
+            }
+        ],
+        "color": "green"
+    },
+    {
+        "day": "Saturday",
+        "activities": [
+            {
+                "title": "Father Daughter Dance",
+                "timing": "3:00 PM - 5:00 PM"
+            }
+        ],
+        "color": "green"
+    }
+]

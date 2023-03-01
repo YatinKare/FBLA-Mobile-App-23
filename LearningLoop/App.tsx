@@ -3,10 +3,11 @@ import { StyleSheet, Text, View } from 'react-native';
 import CalendarScreen from './screens/Calendar';
 import PhotosScreen from './screens/Photos';
 import UpcomingEventsScreen from './screens/UpcomingEvents';
+import UpdatePhotosScreen from './screens/UpdatePhotos';
 
 export default function App() {
   return (
-    <CalendarScreen />
+    <UpdatePhotosScreen />
   );
 
 

@@ -5,18 +5,28 @@ import PhotoCard from '../components/PhotoCard';
 import imageSource1 from '../assets/Photo1.webp';
 import imageSource2 from '../assets/photo2.jpg';
 
+import data from '../assets/photos.tsx';
+
+//import '../global.js';
+
+
+const image1 = '../assets/Photo1.webp';
+
+
 
 const PhotosScreen = (props) => {
     const date = new Date();
+
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Photos {date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear()}</Text>
             <View style={styles.lineSeparator} />
             <View style={styles.photoCards}>
-                <PhotoCard photo={imageSource1} title='Photo1' description='smtg smtgsmtg smtgsmtg smtasdfsadfijhiuhgsmtg smtgsmtg smtgsmtg smtgsmtg smtgsmtg smtgsmtg smtgsmtg smtgsmtg smtg'
-                    style={styles.photoCard} />
-                <PhotoCard photo={imageSource2} title='Photo2' description='https://www.pexels.com/photo/two-girls-doing-school-works-1720186/ '
-                    style={styles.photoCard} />
+                {data.map((info, index) => (
+                    <View key={index}>
+                        <PhotoCard photo={info.photo} title={info.title} description={info.description} style={styles.photoCard}/>
+                    </View>
+                ))}
             </View>
 
         </View>

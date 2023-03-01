@@ -117,9 +117,9 @@ export default CalendarScreen;
 import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, ScrollView } from 'react-native';
 import CalendarCard from '../components/CalendarCard';
-import data from '../assets/calendar.json';
-let myMap = new Map(Object.entries(data));
-console.log(myMap.get("Sunday")?.title);
+
+import newArr from '../assets/new_calendar.json';
+
 
 const CalendarScreen = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -137,6 +137,19 @@ const CalendarScreen = () => {
     dates.push(dateIter);
     dateIter = new Date(dateIter.getTime() + dayInMillis);
   }
+  //console.log(dates);
+
+  let mainArr = [];
+  for(let j = 0; j < dates.length; j++){
+    mainArr.push({
+      date: dates[j],
+      day: newArr[j].day,
+      activities: [
+        newArr[j].activities
+      ],
+      color: newArr[j].color
+    });
+  }
 
   const handlePrevWeek = () => {
     const newDate = new Date(selectedDate);
@@ -149,6 +162,8 @@ const CalendarScreen = () => {
     newDate.setDate(newDate.getDate() + 7);
     setSelectedDate(newDate);
   };
+
+
 
   return (
     <View style={styles.container}>
@@ -194,24 +209,32 @@ const CalendarScreen = () => {
       </View>
       <View style={styles.lineSeparator} />
 
-      <ScrollView horizontal>
-              <View style={styles.week}>
-                  {dates.map((day) => (
-                      <View style={styles.dayContainer} key={day.toLocaleDateString('en-US', { weekday: 'long' })}>
-                          <Text style={styles.dayText}>{day.toLocaleDateString('en-US', {
-                              weekday: 'long',
-                              month: 'long',
-                              day: 'numeric',
-                              year: 'numeric',
-                          })}</Text>
-                          {data.map((day) => {
-                            console.log(day);
-                          })}
-                          <CalendarCard bannerColor="blue" title="Field Trip to the Zoo!" time="10:00 AM - 2:30 PM" />
-                          <CalendarCard bannerColor="green" title="Team Meeting" time="3:00 PM - 4:30 PM" />
+      <ScrollView Verticle>
+        <View style={styles.week}>
+          {mainArr.map((day) => (
+            <View style={styles.dayContainer} key={day.date.toLocaleDateString('en-US', { weekday: 'long' })}>
+              <Text style={styles.dayText}>{day.date.toLocaleDateString('en-US', {
+                weekday: 'long',
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric',
+              })
+
+              }</Text>
+              {day.activities.map((info, index) => (
+                <View key={index}>
+                  {
+                    info.map((obj, index) => (
+                      <View key={index}>
+                      <CalendarCard bannerColor={day.color} title={obj.title} time={obj.timing}/>
                       </View>
-                  ))}
-              </View>
+                    ))}
+
+                </View>
+              ))}
+            </View>
+          ))}
+        </View>
           </ScrollView>
 
 
