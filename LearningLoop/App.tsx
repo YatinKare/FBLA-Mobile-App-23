@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
 import CalendarScreen from './screens/Calendar';
 import PhotosScreen from './screens/Photos';
 import UpcomingEventsScreen from './screens/UpcomingEvents';
@@ -8,9 +9,12 @@ import UpdatePhotosScreen from './screens/UpdatePhotos';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import LoginScreen from './screens/Login';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+
+
 
 function TeacherTabNavigator() {
   return (
@@ -31,15 +35,29 @@ function ParentTabNavigator() {
 }
 
 export default function App() {
+  type UserType = 'teacher' | 'parent';
+  const [userType, setUserType] = useState<UserType>();
 
+  const handleLogin = () => {
+    setUserType(selectedUserType);
+  };
 
   return (
-    <NavigationContainer>
-    <Stack.Navigator initialRouteName="Parent">
-      <Stack.Screen name="Teacher" component={TeacherTabNavigator} />
-      <Stack.Screen name="Parent" component={ParentTabNavigator} />
-    </Stack.Navigator>
-  </NavigationContainer>
+  <NavigationContainer>
+      {userType ? (
+        userType === 'teacher' ? (
+          <TeacherTabNavigator />
+        ) : (
+          <ParentTabNavigator />
+        )
+      ) : (
+        <Stack.Navigator>
+          <Stack.Screen name="Login" options={{ headerShown: false }}>
+            {() => <LoginScreen setUserType={setUserType} onLogin={handleLogin} />}
+          </Stack.Screen>
+        </Stack.Navigator>
+      )}
+    </NavigationContainer>
   );
 
   return (
