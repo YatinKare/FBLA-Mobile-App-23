@@ -23,15 +23,15 @@ const PhotoCard: React.FC<Props> = ({photo, title, description}) => {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#000',
-        borderRadius: 10,
-        marginHorizontal: 16,
-        marginVertical: 8,
-        overflow: 'hidden',
-        flexDirection: 'row',
-        width: '90%',
-        alignSelf: "center",
+  container: {
+    backgroundColor: '#000',
+    borderRadius: 10,
+    marginHorizontal: 16,
+    marginVertical: 8,
+    overflow: 'hidden',
+    flexDirection: 'row',
+    width: '500%',
+    alignSelf: "center",
       },
       imageContainer: {
         flex: 1,
@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
         flex: 1,
         height: undefined,
         width: undefined,
+        
       },
       textContainer: {
         flex: 2,

@@ -207,7 +207,7 @@ const CalendarScreen = () => {
           <Text style={styles.arrowText}>{'>'}</Text>
         </TouchableOpacity>
       </View>
-      <View style={styles.lineSeparator} />
+
 
       <ScrollView Verticle>
         <View style={styles.week}>
@@ -272,6 +272,9 @@ lineSeparator: {
     fontSize: 16,
     fontWeight: 'bold',
     marginHorizontal: 19,
+  },
+  week: {
+    width: '90%'
   },
   dateContainer: {
     flexDirection: 'row',

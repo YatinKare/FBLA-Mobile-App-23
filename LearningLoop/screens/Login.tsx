@@ -1,12 +1,115 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { useState } from 'react';
+import { View, Text, TextInput, Button, StyleSheet, } from 'react-native';
 
-function LoginScreen(props) {
+type Props = {
+    setUserType: React.Dispatch<React.SetStateAction<string>>;
+  };
+  
+  const LoginScreen: React.FC<Props> = ({ setUserType }) => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [selectedUserType, setSelectedUserType] = useState("teacher");
+  
+    const handleSubmit = () => {
+  console.log("User type:", selectedUserType);
+  console.log("Email:", email);
+  console.log("Password:", password);
+
+        
+      if (email === "teacher@example.com" && password === "teacher123" /*&& selectedUserType === "teacher"*/) {
+        setUserType("teacher");
+      } else if (email === "parent@example.com" && password === "parent123"/* && selectedUserType === "parent"*/) {
+        setUserType("parent");
+      } else {
+        alert("Invalid credentials");
+      }
+    };
+  
     return (
-        <View>
-            <Text>Home Screen</Text>
+      <View style={styles.container}>
+        <Text style={styles.logo}>Learning Loop</Text>
+        <View style={styles.loginContainer}>
+          <Text style={styles.loginText}>Login</Text>
+          <View style={styles.inputContainer}>
+            {/*<Text style={styles.label}>User Type</Text>
+            <TextInput
+              style={styles.input}
+              id="user-type"
+              name="user-type"
+              value={selectedUserType}
+              onChangeText={(value) => setSelectedUserType(value)}
+            />
+  */}
+          </View>
+          <View style={styles.inputContainer}>
+            <Text style={styles.label}>Email</Text>
+            <TextInput
+              style={styles.input}
+              id="email"
+              type="email"
+              name="email"
+              onChangeText={(value) => setEmail(value)}
+            />
+          </View>
+          <View style={styles.inputContainer}>
+            <Text style={styles.label}>Password</Text>
+            <TextInput
+              style={styles.input}
+              id="password"
+              type="password"
+              name="password"
+              secureTextEntry={true}
+              onChangeText={(value) => setPassword(value)}
+            />
+          </View>
+          <Button
+            id="login-button"
+            title="Login"
+            onPress={handleSubmit} // Set the onPress prop to the handleSubmit function
+          />
         </View>
+      </View>
     );
-}
+  };
+  
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: "#26bf84",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    logo: {
+      fontSize: 48,
+      marginBottom: 32,
+      color: "white",
+    },
+    loginContainer: {
+      width: "80%",
+    },
+    loginText: {
+      fontSize: 24,
+      fontWeight: "bold",
+      marginBottom: 16,
+      color: "white",
+    },
+    inputContainer: {
+      marginBottom: 16,
+    },
+    label: {
+      marginBottom: 8,
+      fontWeight: "bold",
+      color: "white",
+    },
+    input: {
+      borderWidth: 1,
+      borderColor: "#ccc",
+      borderRadius: 5,
+      paddingHorizontal: 16,
+      paddingVertical: 8,
+      color: "white",
+    },
+  });
 
 export default LoginScreen;

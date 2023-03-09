@@ -8,6 +8,7 @@ const UpdatePhotosScreen = () => {
   const [description, setDescription] = useState('');
 
   const handlePress = () => {
+    alert("You have submitted a photo");
     const newObject = {
       photo: { uri: photo },
       title: title,
