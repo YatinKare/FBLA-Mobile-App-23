@@ -17,9 +17,9 @@ type Props = {
   console.log("Password:", password);
 
         
-      if (email === "teacher@example.com" && password === "teacher123" && selectedUserType === "teacher") {
+      if (email === "teacher@example.com" && password === "teacher123" /*&& selectedUserType === "teacher"*/) {
         setUserType("teacher");
-      } else if (email === "parent@example.com" && password === "parent123" && selectedUserType === "parent") {
+      } else if (email === "parent@example.com" && password === "parent123"/* && selectedUserType === "parent"*/) {
         setUserType("parent");
       } else {
         alert("Invalid credentials");
@@ -28,11 +28,11 @@ type Props = {
   
     return (
       <View style={styles.container}>
-        <Text style={styles.logo}>Logo</Text>
+        <Text style={styles.logo}>Learning Loop</Text>
         <View style={styles.loginContainer}>
           <Text style={styles.loginText}>Login</Text>
           <View style={styles.inputContainer}>
-            <Text style={styles.label}>User Type</Text>
+            {/*<Text style={styles.label}>User Type</Text>
             <TextInput
               style={styles.input}
               id="user-type"
@@ -40,6 +40,7 @@ type Props = {
               value={selectedUserType}
               onChangeText={(value) => setSelectedUserType(value)}
             />
+  */}
           </View>
           <View style={styles.inputContainer}>
             <Text style={styles.label}>Email</Text>
@@ -75,13 +76,14 @@ type Props = {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#fff",
+      backgroundColor: "#26bf84",
       alignItems: "center",
       justifyContent: "center",
     },
     logo: {
-      fontSize: 32,
+      fontSize: 48,
       marginBottom: 32,
+      color: "white",
     },
     loginContainer: {
       width: "80%",
@@ -90,6 +92,7 @@ type Props = {
       fontSize: 24,
       fontWeight: "bold",
       marginBottom: 16,
+      color: "white",
     },
     inputContainer: {
       marginBottom: 16,
@@ -97,6 +100,7 @@ type Props = {
     label: {
       marginBottom: 8,
       fontWeight: "bold",
+      color: "white",
     },
     input: {
       borderWidth: 1,
@@ -104,6 +108,7 @@ type Props = {
       borderRadius: 5,
       paddingHorizontal: 16,
       paddingVertical: 8,
+      color: "white",
     },
   });
 

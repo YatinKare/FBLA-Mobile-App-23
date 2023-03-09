@@ -1,80 +1,152 @@
-[
-    {
-        "day": "Sunday",
-        "activities": [
-            {
-                "title": "Parent Update Meeting",
-                "timing": "4:30 PM - 5:30 PM"
-            }
-        ],
-        "color": "blue"
-    },
-    {
-        "day": "Monday",
-        "activities": [
-            {
-                "title": "Jake's Birthday Party",
-                "timing": "1:00 PM - 2:00 PM"
-            }
-        ],
-        "color": "green"
-    },
-    {
-        "day": "Tuesday",
-        "activities": [
-            {
-                "title": "Reptile Handler Visit",
-                "timing": "12:00 PM - 2:30 PM"
-            }
-        ],
-        "color": "green"
-    },
-    {
-        "day": "Wednesday",
-        "activities": [
-            {
-                "title": "Field Trip Dropoff",
-                "timing": "6:30 AM"
-            },
-            {
-                "title": "Field Trip Pickup",
-                "timing": "3:30 PM"
-            }
-        ],
-        "color": "green"
-    },
-    {
-        "day": "Thursday",
-        "activities": [
-            {
-                "title": "Parent Teacher Conferences",
-                "timing": "All Day"
-            },
-            {
-                "title": "PTA Meeting",
-                "timing": "6:00 PM - 7:00 PM"
-            }
-        ],
-        "color": "green"
-    },
-    {
-        "day": "Friday",
-        "activities": [
-            {
-                "title": "Pajama Day",
-                "timing": "All Day"
-            }
-        ],
-        "color": "green"
-    },
-    {
-        "day": "Saturday",
-        "activities": [
-            {
-                "title": "Father Daughter Dance",
-                "timing": "3:00 PM - 5:00 PM"
-            }
-        ],
-        "color": "green"
-    }
-]
+[[ 
+
+{
+    "day": "Sunday",
+    "activities": [
+        {
+            "title": "week before",
+            "timing": "8:00 AM - 3:30 PM"
+        }
+    ],
+    "color": "blue"
+},
+{
+    "day": "Monday",
+    "activities": [
+        {
+            "title": "Sky Dome, Lesson on Solar Systems",
+            "timing": "10:00 AM - 11:30 AM"
+        }
+    ],
+    "color": "blue"
+},
+{
+    "day": "Tuesday",
+    "activities": [
+        {
+            "title": "Snow White Stage Play",
+            "timing": "1:00 PM - 2:00 PM"
+        }
+    ],
+    "color": "blue"
+},
+{
+    "day": "Wednesday",
+    "activities": [
+        {
+            "title": "BYOT Day (Bring Your Own Technology)",
+            "timing": "8:00 AM - 3:30 PM"
+        }
+    ],
+    "color": "blue"
+},
+{
+    "day": "Thursday",
+    "activities": [
+        {
+            "title": "Sonya’s Birthday Party",
+            "timing": "11:30 am - 1:00 pm"
+        }
+    ],
+    "color": "blue"
+},
+{
+    "day": "Friday",
+    "activities": [
+        {
+            "title": "Sonya’s Birthday Party",
+            "timing": "11:30 am - 1:00 pm"
+        }
+    ],
+    "color": "blue"
+},
+{
+    "day": "Saturday",
+    "activities": [
+        {
+            "title": "Sonya’s Birthday Party",
+            "timing": "11:30 am - 1:00 pm"
+        }
+    ],
+    "color": "blue"
+}
+
+], [{
+    "day": "Sunday",
+    "activities": [
+        {
+            "title": "Parent Update Meeting",
+            "timing": "4:30 PM - 5:30 PM"
+        }
+    ],
+    "color": "blue"
+},
+{
+    "day": "Monday",
+    "activities": [
+        {
+            "title": "Jake's Birthday Party",
+            "timing": "1:00 PM - 2:00 PM"
+        }
+    ],
+    "color": "green"
+},
+{
+    "day": "Tuesday",
+    "activities": [
+        {
+            "title": "Reptile Handler Visit",
+            "timing": "12:00 PM - 2:30 PM"
+        }
+    ],
+    "color": "green"
+},
+{
+    "day": "Wednesday",
+    "activities": [
+        {
+            "title": "Field Trip Dropoff",
+            "timing": "6:30 AM"
+        },
+        {
+            "title": "Field Trip Pickup",
+            "timing": "3:30 PM"
+        }
+    ],
+    "color": "green"
+},
+{
+    "day": "Thursday",
+    "activities": [
+        {
+            "title": "Parent Teacher Conferences",
+            "timing": "All Day"
+        },
+        {
+            "title": "PTA Meeting",
+            "timing": "6:00 PM - 7:00 PM"
+        }
+    ],
+    "color": "green"
+},
+{
+    "day": "Friday",
+    "activities": [
+        {
+            "title": "Pajama Day",
+            "timing": "All Day"
+        }
+    ],
+    "color": "green"
+},
+{
+    "day": "Saturday",
+    "activities": [
+        {
+            "title": "Father Daughter Dance",
+            "timing": "3:00 PM - 5:00 PM"
+        }
+    ],
+    "color": "green"
+}],
+ []]

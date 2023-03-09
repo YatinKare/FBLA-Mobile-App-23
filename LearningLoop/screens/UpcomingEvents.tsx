@@ -13,7 +13,9 @@ const UpcomingEventsScreen = (props) => {
             <Text style={styles.title}>Upcoming Events {date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear()}</Text>
             <View style={styles.lineSeparator} />
             <View style={styles.upcomingEventsCard}>
-                <UpcomingEventsCard photo={imageSource1} title='Test' description='smtg smtgsmtg smtgsmtg smtasdfsadfijhiuhgsmtg smtgsmtg smtgsmtg smtgsmtg smtgsmtg smtgsmtg smtgsmtg smtgsmtg smtg'
+                <UpcomingEventsCard photo={imageSource1} 
+                title='Dog Day' 
+                description='We will be having some therapy dogs in our classroom next week. Please let me know if your child is allergic.'
                     style={styles.photoCard} />
             </View>
 

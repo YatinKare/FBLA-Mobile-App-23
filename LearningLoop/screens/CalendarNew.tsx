@@ -120,8 +120,9 @@ import CalendarCard from '../components/CalendarCard';
 
 import newArr from '../assets/new_calendar.json';
 
+let weekNum: number = 1;
 
-const CalendarScreen = () => {
+const CalendarNewScreen = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(currentDate);
 
@@ -137,30 +138,36 @@ const CalendarScreen = () => {
     dates.push(dateIter);
     dateIter = new Date(dateIter.getTime() + dayInMillis);
   }
-  //console.log(dates);
 
   let mainArr = [];
-  for(let j = 0; j < dates.length; j++){
-    mainArr.push({
-      date: dates[j],
-      day: newArr[j].day,
+  console.log(newArr);
+
+    for(let z = 0; z < dates.length; z++){
+        mainArr.push({
+      date: dates[z],
+      day: newArr[weekNum][z].day,
       activities: [
-        newArr[j].activities
+        newArr[weekNum][z].activities
       ],
-      color: newArr[j].color
+      color: newArr[weekNum][z].color
     });
-  }
+    }
+
+  
+    console.log(weekNum);
 
   const handlePrevWeek = () => {
     const newDate = new Date(selectedDate);
     newDate.setDate(newDate.getDate() - 7);
     setSelectedDate(newDate);
+    weekNum = weekNum - 1;
   };
 
   const handleNextWeek = () => {
     const newDate = new Date(selectedDate);
     newDate.setDate(newDate.getDate() + 7);
     setSelectedDate(newDate);
+    weekNum = weekNum + 1;
   };
 
 
@@ -321,4 +328,4 @@ lineSeparator: {
   },
 });
 
-export default CalendarScreen;
+export default CalendarNewScreen;

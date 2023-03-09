@@ -1,10 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react';
+
 import CalendarScreen from './screens/Calendar';
 import PhotosScreen from './screens/Photos';
 import UpcomingEventsScreen from './screens/UpcomingEvents';
 import UpdatePhotosScreen from './screens/UpdatePhotos';
+import AbsenceFormScreen from './screens/AbsenceForm';
+import AbsenceScreen from './screens/Absence';
+import ParentTranslationScreen from './screens/ParentTranslation';
+import TeacherTranslationScreen from './screens/TeacherTranslation';
+import CalendarNewScreen from './screens/CalendarNew';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -20,6 +26,8 @@ function TeacherTabNavigator() {
   return (
     <Tab.Navigator>
       <Tab.Screen name="UpdatePhotos" component={UpdatePhotosScreen} />
+      <Tab.Screen name="Absence" component={AbsenceScreen} />
+      <Tab.Screen name="Messages" component={TeacherTranslationScreen} />
     </Tab.Navigator>
   );
 }
@@ -27,9 +35,12 @@ function TeacherTabNavigator() {
 function ParentTabNavigator() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Calendar" component={CalendarScreen} />
       <Tab.Screen name="Photos" component={PhotosScreen} />
+      <Tab.Screen name="Calendar" component={CalendarScreen} />
+      <Tab.Screen name="better" component={CalendarNewScreen} />
       <Tab.Screen name="UpcomingEvents" component={UpcomingEventsScreen} />
+      <Tab.Screen name="Absence Form" component={AbsenceFormScreen} />
+      <Tab.Screen name="Contact" component={ParentTranslationScreen} />
     </Tab.Navigator>
   );
 }

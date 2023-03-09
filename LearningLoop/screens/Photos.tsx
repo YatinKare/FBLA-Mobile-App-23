@@ -2,17 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet} from 'react-native';
 import PhotoCard from '../components/PhotoCard';
 
-import imageSource1 from '../assets/Photo1.webp';
-import imageSource2 from '../assets/photo2.jpg';
-
 import data from '../assets/photos.tsx';
-
-//import '../global.js';
-
-
-const image1 = '../assets/Photo1.webp';
-
-
 
 const PhotosScreen = (props) => {
     const date = new Date();
@@ -25,6 +15,7 @@ const PhotosScreen = (props) => {
                 {data.map((info, index) => (
                     <View key={index}>
                         <PhotoCard photo={info.photo} title={info.title} description={info.description} style={styles.photoCard}/>
+                        <View style={styles.separate}/>
                     </View>
                 ))}
             </View>
@@ -59,7 +50,7 @@ const styles = StyleSheet.create({
     },
     photoCards: {
         backgroundColor: 'rgb(192, 192, 192, 0.7)',
-    }
+    },
 })
 
 export default PhotosScreen;
