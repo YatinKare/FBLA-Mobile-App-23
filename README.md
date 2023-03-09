@@ -32,7 +32,19 @@ For Andriod, type `a` into the terminal after you have connected a simulator or 
 > GitHub is a web-based platform used for version control and collaborative software development. We utilized github to host and review code, manage projects, and build software together with our team.
 
 ### Visual Studio Code
-> a source-code editor made by Microsoft with the Electron Framework, for Windows, Linux and macOS. 
+> A source-code editor made by Microsoft with the Electron Framework, for Windows, Linux and macOS. This was the main development platform used by our team to code, build, and debug the app.
+
+### Trello
+> Trello is a web-based project management tool that uses a visual approach to help individuals and teams organize and prioritize tasks, track progress, and collaborate with others. We used trello to organize our workflow and tasks.
+
+## Aditional Libraries used
+
+### React Native Navigator
+> React Native Navigator is a library that provides a way to manage navigation between screens and components in a React Native app. This was implemented to have a tabular navigation once the user is logged in.
+
+### TypeScript
+> TypeScript is a statically-typed superset of JavaScript that adds optional type annotations to the language, allowing developers to catch type-related errors at compile time rather than at runtime. Using TypeScript allowed us to catch bugs faster and implement a more error-free app.
+
 
 ## License
-This project is licensed under the terms of the MIT license .
+This project is licensed under the terms of the MIT license. For more information, read `LICENSE` in the home directory of this repo.
