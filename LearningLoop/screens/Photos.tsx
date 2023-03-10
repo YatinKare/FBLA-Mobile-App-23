@@ -1,12 +1,18 @@
+// Importing necessary components from react native library
 import React from 'react';
 import { View, Text, StyleSheet} from 'react-native';
+
+// Importing custom PhotoCard component
 import PhotoCard from '../components/PhotoCard';
 
+// Importing photo data from assets
 import data from '../assets/photos.tsx';
 
+// Functional component for Photos screen
 const PhotosScreen = (props) => {
+    // Getting current date
     const date = new Date();
-
+// Returning JSX for Photos screen
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Photos {date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear()}</Text>
@@ -19,11 +25,11 @@ const PhotosScreen = (props) => {
                     </View>
                 ))}
             </View>
-
         </View>
     );
 }
 
+// Stylesheet for Photos screen
 const styles = StyleSheet.create({
     container: {
         flex: 1,
