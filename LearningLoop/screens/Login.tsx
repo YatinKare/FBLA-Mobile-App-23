@@ -70,6 +70,7 @@ type Props = {
             onPress={handleSubmit} // Set the onPress prop to the handleSubmit function
           />
         </View>
+          <Text style={styles.socialsText}>Follow us on our Socials @LearningLoop!</Text>
         <View style={styles.socials}>
         <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com')}>
           <Ionicons name="logo-instagram" size={32} color="black" style={{ marginHorizontal: 10 }} />
@@ -127,6 +128,13 @@ type Props = {
       width: '100%',
       paddingVertical: 16,
       paddingHorizontal: 16,
+      color: "white",
+        },
+        socialsText: {
+          marginTop: 20,
+          fontSize: 24,
+          fontWeight: "bold",
+          color: "white",
         },
   });
 
