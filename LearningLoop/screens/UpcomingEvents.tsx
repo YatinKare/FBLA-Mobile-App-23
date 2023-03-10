@@ -1,21 +1,25 @@
+// Import necessary components and assets
 import React from 'react';
-import { View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 import imageSource1 from '../assets/dog.jpg';
 import imageSource2 from '../assets/favicon.png';
 import UpcomingEventsCard from '../components/UpcomingEventsCard';
 
-
+// Define UpcomingEventsScreen component
 const UpcomingEventsScreen = (props) => {
+    // Get current date
     const date = new Date();
+    // Return screen layout
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Upcoming Events {date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear()}</Text>
             <View style={styles.lineSeparator} />
             <View style={styles.upcomingEventsCard}>
-                <UpcomingEventsCard photo={imageSource1} 
-                title='Dog Day' 
-                description='We will be having some therapy dogs in our classroom next week. Please let me know if your child is allergic.'
+                {/* Pass in props to UpcomingEventsCard component */}
+                <UpcomingEventsCard photo={imageSource1}
+                    title='Dog Day'
+                    description='We will be having some therapy dogs in our classroom next week. Please let me know if your child is allergic.'
                     style={styles.photoCard} />
             </View>
 
@@ -23,6 +27,7 @@ const UpcomingEventsScreen = (props) => {
     );
 }
 
+// Define component styles
 const styles = StyleSheet.create({
     container: {
         flex: 1,
