@@ -24,7 +24,19 @@ For iOS, type `i` into the terminal after you have connected a simulator or phys
 For Andriod, type `a` into the terminal after you have connected a simulator or physical device. 
 
 ## Resources 
-{resources go here}
+
+### Github.com
+`https://github.com/YatinKare/FBLA-Mobile-App-23`
+
+### Unsplash
+Example photos used
+
+### React Native
+`https://reactnative.dev/docs/getting-started`
+
+### TypeScript
+`https://www.typescriptlang.org/docs/`
+
 
 ## Software and Services Used
 
