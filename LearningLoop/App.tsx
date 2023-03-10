@@ -3,7 +3,6 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react';
 
-import CalendarScreen from './screens/Calendar';
 import PhotosScreen from './screens/Photos';
 import UpcomingEventsScreen from './screens/UpcomingEvents';
 import UpdatePhotosScreen from './screens/UpdatePhotos';
@@ -38,8 +37,7 @@ function ParentTabNavigator() {
   return (
     <Tab.Navigator>
       <Tab.Screen name="Photos" component={PhotosScreen} />
-      <Tab.Screen name="Calendar" component={CalendarScreen} />
-      <Tab.Screen name="better" component={CalendarNewScreen} />
+      <Tab.Screen name="Calendar" component={CalendarNewScreen} />
       <Tab.Screen name="UpcomingEvents" component={UpcomingEventsScreen} />
       <Tab.Screen name="Absence Form" component={AbsenceFormScreen} />
       <Tab.Screen name="Contact" component={ParentTranslationScreen} />

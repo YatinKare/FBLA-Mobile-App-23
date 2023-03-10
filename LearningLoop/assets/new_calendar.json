@@ -3,10 +3,7 @@
 {
     "day": "Sunday",
     "activities": [
-        {
-            "title": "week before",
-            "timing": "8:00 AM - 3:30 PM"
-        }
+       
     ],
     "color": "blue"
 },
@@ -35,7 +32,7 @@
     "activities": [
         {
             "title": "BYOT Day (Bring Your Own Technology)",
-            "timing": "8:00 AM - 3:30 PM"
+            "timing": "All Day"
         }
     ],
     "color": "blue"
@@ -45,7 +42,7 @@
     "activities": [
         {
             "title": "Sonya’s Birthday Party",
-            "timing": "11:30 am - 1:00 pm"
+            "timing": "11:30 AM - 1:00 PP"
         }
     ],
     "color": "blue"
@@ -54,8 +51,8 @@
     "day": "Friday",
     "activities": [
         {
-            "title": "Sonya’s Birthday Party",
-            "timing": "11:30 am - 1:00 pm"
+            "title": "Early Release",
+            "timing": "8:00 AM - 12:00 PM"
         }
     ],
     "color": "blue"
@@ -63,24 +60,19 @@
 {
     "day": "Saturday",
     "activities": [
-        {
-            "title": "Sonya’s Birthday Party",
-            "timing": "11:30 am - 1:00 pm"
-        }
+        
     ],
     "color": "blue"
 }
 
-], [
+], 
+[
     
     
 {
     "day": "Sunday",
     "activities": [
-        {
-            "title": "Parent Update Meeting",
-            "timing": "4:30 PM - 5:30 PM"
-        }
+        
     ],
     "color": "blue"
 },
@@ -108,20 +100,6 @@
     "day": "Wednesday",
     "activities": [
         {
-            "title": "Field Trip Dropoff",
-            "timing": "6:30 AM"
-        },
-        {
-            "title": "Field Trip Pickup",
-            "timing": "3:30 PM"
-        }
-    ],
-    "color": "green"
-},
-{
-    "day": "Thursday",
-    "activities": [
-        {
             "title": "Parent Teacher Conferences",
             "timing": "All Day"
         },
@@ -133,7 +111,7 @@
     "color": "green"
 },
 {
-    "day": "Friday",
+    "day": "Thursday",
     "activities": [
         {
             "title": "Pajama Day",
@@ -143,18 +121,168 @@
     "color": "green"
 },
 {
-    "day": "Saturday",
+    "day": "Friday",
     "activities": [
         {
-            "title": "Father Daughter Dance",
-            "timing": "3:00 PM - 5:00 PM"
+            "title": "Field Trip Drop Off (Forsyth 4H Center)",
+            "timing": "7:30 AM"
         }
+    ],
+    "color": "green"
+},
+{
+    "day": "Saturday",
+    "activities": [
+        
     ],
     "color": "green"
 }
 
-],[
+],
+[
+
+    {
+        "day": "Sunday",
+        "activities": [
+            {
+                "title": "Field Trip Pickup",
+                "timing": "10:00 AM"
+            }
+        ],
+        "color": "blue"
+    },
+    {
+        "day": "Monday",
+        "activities": [
+            {
+                "title": "No School",
+                "timing": "All Day"
+            },
+            {
+                "title": "Teacher Planning Day",
+                "timing": "All Day"
+            }
+        ],
+        "color": "green"
+    },
+    {
+        "day": "Tuesday",
+        "activities": [
+            {
+                "title": "Father Daughter Dance",
+                "timing": "2:00 PM - 5:00 PM"
+            }
+        ],
+        "color": "green"
+    },
+    {
+        "day": "Wednesday",
+        "activities": [
+            {
+                "title": "Pancake Day",
+                "timing": "10:00 AM - 11:00 AM"
+            }
+        ],
+        "color": "green"
+    },
+    {
+        "day": "Thursday",
+        "activities": [
+            {
+                "title": "Talent Show",
+                "timing": "10:00 AM - 12:00 PM"
+            }
+        ],
+        "color": "green"
+    },
+    {
+        "day": "Friday",
+        "activities": [
+            {
+                "title": "Scientist Special Visit",
+                "timing": "10:00 AM - 11:00 AM"
+            }
+        ],
+        "color": "green"
+    },
+    {
+        "day": "Saturday",
+        "activities": [
+            
+        ],
+        "color": "green"
+    }
     
+
+],
+[
+    {
+        "day": "Sunday",
+        "activities": [
+            {
+                "title": "Ice Skating Meet Up",
+                "timing": "10:00 AM - 12:00 PM"
+            }
+        ],
+        "color": "blue"
+    },
+    {
+        "day": "Monday",
+        "activities": [
+            {
+                "title": "Photo Day",
+                "timing": "All Day"
+            }
+        ],
+        "color": "green"
+    },
+    {
+        "day": "Tuesday",
+        "activities": [
+            {
+                "title": "Peter Pan Stage Play",
+                "timing": "2:00 PM - 5:00 PM"
+            }
+        ],
+        "color": "green"
+    },
+    {
+        "day": "Wednesday",
+        "activities": [
+            {
+                "title": "Sports Day",
+                "timing": "9:00 AM - 11:00 AM"
+            }
+        ],
+        "color": "green"
+    },
+    {
+        "day": "Thursday",
+        "activities": [
+            {
+                "title": "Nature Walk",
+                "timing": "10:00 AM - 11:00 AM"
+            }
+        ],
+        "color": "green"
+    },
+    {
+        "day": "Friday",
+        "activities": [
+            {
+                "title": "Early Release",
+                "timing": "8:00 AM - 12:00 PM"
+            }
+        ],
+        "color": "green"
+    },
+    {
+        "day": "Saturday",
+        "activities": [
+            
+        ],
+        "color": "green"
+    }
 ]
 
 
