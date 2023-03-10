@@ -2,17 +2,17 @@ import React, { useCallback, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, RefreshControl } from 'react-native';
 import AbsenceCard from '../components/AbsenceCard';
 
-import data from '../assets/absence';
+import data from '../assets/absence'; // import absence data from file
 import PhotoCard from '../components/PhotoCard';
 
 const AbsenceScreen = (props) => {
     const date = new Date();
-    const [refreshing, setRefreshing] = useState(false);
+    const [refreshing, setRefreshing] = useState(false); // state for RefreshControl
 
-    const onRefresh = useCallback(() => {
-        setRefreshing(true);
+    const onRefresh = useCallback(() => { // function to handle RefreshControl
+        setRefreshing(true); // set refreshing state to true
         setTimeout(() => {
-          setRefreshing(false);
+          setRefreshing(false); // set refreshing state to false after 2 seconds
         }, 2000);
       }, []);
 
@@ -21,12 +21,12 @@ const AbsenceScreen = (props) => {
              <ScrollView
         contentContainerStyle={styles.scrollView}
         refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} /> // RefreshControl component
         }>
             <Text style={styles.title}>Absence for {date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear()}</Text>
-            <View style={styles.lineSeparator} />
+            <View style={styles.lineSeparator} /> // horizontal line separator
             <View style={styles.absenceCards}>
-                {data.map((info, index) => (
+                {data.map((info, index) => ( // mapping through absence data and rendering AbsenceCard components
                     <View key={index}>
                         <AbsenceCard name={info.name} reason={info.reason} signature={info.signature} style={styles.absenceCard}/>
                     </View>
@@ -37,6 +37,7 @@ const AbsenceScreen = (props) => {
     );
 }
 
+// Display Styles
 const styles = StyleSheet.create({
     container: {
         flex: 1,
