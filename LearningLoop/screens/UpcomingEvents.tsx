@@ -19,7 +19,7 @@ const UpcomingEventsScreen = (props) => {
                 {/* Pass in props to UpcomingEventsCard component */}
                 <UpcomingEventsCard photo={imageSource3}
                     title='Feild Trip Drop Off'
-                    description='We will be having some therapy dogs in our classroom next week. Please let me know if your child is allergic.'
+                    description='We will be having our field trip to the zoo. Check the calendar for the drop off time.'
                     style={styles.photoCard} />
             </View>
 

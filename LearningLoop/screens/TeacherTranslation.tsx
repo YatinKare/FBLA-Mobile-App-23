@@ -24,7 +24,7 @@ const TeacherTranslationScreen = (props) => {
       <ScrollView
         contentContainerStyle={styles.scrollView}
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
-        <Text style={styles.title}>Messages for {date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear()}</Text>
+        <Text style={styles.title}>Messages for {/*date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear()*/}3/10/2023</Text>
         <View style={styles.lineSeparator} />
         <View style={styles.absenceCards}>
           <View style={styles.containerTwo}>

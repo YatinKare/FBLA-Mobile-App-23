@@ -23,7 +23,7 @@ const AbsenceScreen = (props) => {
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} /> // RefreshControl component
         }>
-            <Text style={styles.title}>Absence for {date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear()}</Text>
+            <Text style={styles.title}>Absence for {/*date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear()*/} 3/10/2023</Text>
             <View style={styles.lineSeparator} />
             <View style={styles.absenceCards}>
                 {data.map((info, index) => ( // mapping through absence data and rendering AbsenceCard components
