@@ -1,13 +1,17 @@
+// Importing necessary components and types from React and React Native
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+// Defining the interface for the props that the component is expected to receive
 interface CalendarCardProps {
   title: string;
   time: string;
   bannerColor: string;
 }
 
+// Defining the functional component 'CalendarCard' using React.FC type and destructuring the props received
 const CalendarCard: React.FC<CalendarCardProps> = ({ title, time, bannerColor }) => {
+  // Returning the JSX for the calendar card
   return (
     <View style={styles.cardContainer}>
       <View style={[styles.banner, { backgroundColor: bannerColor }]} />
@@ -19,6 +23,7 @@ const CalendarCard: React.FC<CalendarCardProps> = ({ title, time, bannerColor })
   );
 };
 
+// Defining the styles for the calendar card using StyleSheet.create()
 const styles = StyleSheet.create({
   cardContainer: {
     flexDirection: 'row',
