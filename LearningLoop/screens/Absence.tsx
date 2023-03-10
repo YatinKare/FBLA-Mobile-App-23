@@ -12,26 +12,26 @@ const AbsenceScreen = (props) => {
     const onRefresh = useCallback(() => { // function to handle RefreshControl
         setRefreshing(true); // set refreshing state to true
         setTimeout(() => {
-          setRefreshing(false); // set refreshing state to false after 2 seconds
+            setRefreshing(false); // set refreshing state to false after 2 seconds
         }, 2000);
-      }, []);
+    }, []);
 
     return (
         <View style={styles.container}>
-             <ScrollView
-        contentContainerStyle={styles.scrollView}
-        refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} /> // RefreshControl component
-        }>
-            <Text style={styles.title}>Absence for {date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear()}</Text>
-            <View style={styles.lineSeparator} /> // horizontal line separator
-            <View style={styles.absenceCards}>
-                {data.map((info, index) => ( // mapping through absence data and rendering AbsenceCard components
-                    <View key={index}>
-                        <AbsenceCard name={info.name} reason={info.reason} signature={info.signature} style={styles.absenceCard}/>
-                    </View>
-                ))}
-            </View>
+            <ScrollView
+                contentContainerStyle={styles.scrollView}
+                refreshControl={
+                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh} /> // RefreshControl component
+                }>
+                <Text style={styles.title}>Absence for {date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear()}</Text>
+                <View style={styles.lineSeparator} /> // horizontal line separator
+                <View style={styles.absenceCards}>
+                    {data.map((info, index) => ( // mapping through absence data and rendering AbsenceCard components
+                        <View key={index}>
+                            <AbsenceCard name={info.name} reason={info.reason} signature={info.signature} style={styles.absenceCard} />
+                        </View>
+                    ))}
+                </View>
             </ScrollView>
         </View>
     );
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#26bf84',
         alignItems: 'center',
-        
+
     },
     absenceCard: {
         width: '90%',

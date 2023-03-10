@@ -28,9 +28,9 @@ const CalendarNewScreen = () => {
 
   let mainArr = [];
 
-// create an array of objects to represent each day in the current week, with information from a JSON file
-    for(let z = 0; z < dates.length; z++){
-        mainArr.push({
+  // create an array of objects to represent each day in the current week, with information from a JSON file
+  for (let z = 0; z < dates.length; z++) {
+    mainArr.push({
       date: dates[z],
       day: newArr[weekNum][z].day,
       activities: [
@@ -38,9 +38,9 @@ const CalendarNewScreen = () => {
       ],
       color: newArr[weekNum][z].color
     });
-    }
+  }
 
-    // set the selected date to the previous week
+  // set the selected date to the previous week
   const handlePrevWeek = () => {
     const newDate = new Date(selectedDate);
     newDate.setDate(newDate.getDate() - 7);
@@ -60,8 +60,8 @@ const CalendarNewScreen = () => {
 
   return (
     <View style={styles.container}>
-        <Text style={styles.title}>Calendar </Text>
-        <View style={styles.lineSeparator} />
+      <Text style={styles.title}>Calendar </Text>
+      <View style={styles.lineSeparator} />
       <View style={styles.weekContainer}>
         {/* display the days of the week */}
         {daysOfWeek.map((day, index) => (
@@ -78,9 +78,9 @@ const CalendarNewScreen = () => {
             style={[
               styles.dateButton,
               date.getDate() === currentDate.getDate() &&
-                date.getMonth() === currentDate.getMonth() &&
-                date.getFullYear() === currentDate.getFullYear() &&
-                styles.selectedDate,
+              date.getMonth() === currentDate.getMonth() &&
+              date.getFullYear() === currentDate.getFullYear() &&
+              styles.selectedDate,
             ]}
             onPress={() => setSelectedDate(date)}
           >
@@ -125,7 +125,7 @@ const CalendarNewScreen = () => {
                   {
                     info.map((obj, index) => (
                       <View key={index}>
-                      <CalendarCard bannerColor={day.color} title={obj.title} time={obj.timing}/>
+                        <CalendarCard bannerColor={day.color} title={obj.title} time={obj.timing} />
                       </View>
                     ))}
 
@@ -134,7 +134,7 @@ const CalendarNewScreen = () => {
             </View>
           ))}
         </View>
-          </ScrollView>
+      </ScrollView>
     </View>
   );
 };
@@ -151,13 +151,13 @@ const styles = StyleSheet.create({
     fontSize: 32,
     marginBottom: 10,
     marginTop: 10
-},
-lineSeparator: {
+  },
+  lineSeparator: {
     width: '90%',
     height: 1,
     backgroundColor: '#000',
     marginBottom: 20,
-},
+  },
   weekContainer: {
     flexDirection: 'row',
   },
@@ -211,8 +211,8 @@ lineSeparator: {
   },
   calendarCard: {
     width: '90%',
-        alignSelf: 'center',
-        justifyContent: 'center',
+    alignSelf: 'center',
+    justifyContent: 'center',
   },
 });
 
