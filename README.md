@@ -49,7 +49,7 @@ Example photos used
 ### Trello
 > Trello is a web-based project management tool that uses a visual approach to help individuals and teams organize and prioritize tasks, track progress, and collaborate with others. We used trello to organize our workflow and tasks.
 
-## Aditional Libraries used
+## Aditional Libraries Used
 
 ### React Native Navigator
 > React Native Navigator is a library that provides a way to manage navigation between screens and components in a React Native app. This was implemented to have a tabular navigation once the user is logged in.
