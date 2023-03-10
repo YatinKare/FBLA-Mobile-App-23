@@ -4,11 +4,12 @@ import CalendarCard from '../components/CalendarCard';
 
 import newArr from '../assets/new_calendar.json';
 
+// initialize a variable to track the current week number
 let weekNum: number = 1;
 
 const CalendarNewScreen = () => {
-  const [currentDate, setCurrentDate] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState(currentDate);
+  const [currentDate, setCurrentDate] = useState(new Date());// use the useState hook to create a state variable for the current date
+  const [selectedDate, setSelectedDate] = useState(currentDate); // use the useState hook to create a state variable for the currently selected date
 
   const daysOfWeek = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
   const dayInMillis = 86400000;
@@ -18,14 +19,16 @@ const CalendarNewScreen = () => {
   weekEnd.setDate(weekEnd.getDate() + (6 - weekEnd.getDay()));
   const dates = [];
   let dateIter = new Date(weekStart);
+
+  // create an array of dates for the current week
   while (dateIter <= weekEnd) {
     dates.push(dateIter);
     dateIter = new Date(dateIter.getTime() + dayInMillis);
   }
 
   let mainArr = [];
-  console.log(newArr);
 
+// create an array of objects to represent each day in the current week, with information from a JSON file
     for(let z = 0; z < dates.length; z++){
         mainArr.push({
       date: dates[z],
@@ -37,9 +40,7 @@ const CalendarNewScreen = () => {
     });
     }
 
-  
-    console.log(weekNum);
-
+    // set the selected date to the previous week
   const handlePrevWeek = () => {
     const newDate = new Date(selectedDate);
     newDate.setDate(newDate.getDate() - 7);
@@ -47,6 +48,7 @@ const CalendarNewScreen = () => {
     weekNum = weekNum - 1;
   };
 
+  // set the selected date to the next week
   const handleNextWeek = () => {
     const newDate = new Date(selectedDate);
     newDate.setDate(newDate.getDate() + 7);
@@ -61,6 +63,7 @@ const CalendarNewScreen = () => {
         <Text style={styles.title}>Calendar </Text>
         <View style={styles.lineSeparator} />
       <View style={styles.weekContainer}>
+        {/* display the days of the week */}
         {daysOfWeek.map((day, index) => (
           <Text key={index} style={styles.weekDay}>
             {day}
@@ -68,6 +71,7 @@ const CalendarNewScreen = () => {
         ))}
       </View>
       <View style={styles.dateContainer}>
+        {/* display the dates for the current week */}
         {dates.map((date, index) => (
           <TouchableOpacity
             key={index}
@@ -84,6 +88,8 @@ const CalendarNewScreen = () => {
           </TouchableOpacity>
         ))}
       </View>
+
+      {/* Arrows to change the week and its events */}
       <View style={styles.arrowContainer}>
         <TouchableOpacity
           style={styles.arrowButton}
@@ -102,6 +108,7 @@ const CalendarNewScreen = () => {
 
       <ScrollView Verticle>
         <View style={styles.week}>
+          {/* display the day of the week  */}
           {mainArr.map((day) => (
             <View style={styles.dayContainer} key={day.date.toLocaleDateString('en-US', { weekday: 'long' })}>
               <Text style={styles.dayText}>{day.date.toLocaleDateString('en-US', {
@@ -112,6 +119,7 @@ const CalendarNewScreen = () => {
               })
 
               }</Text>
+              {/* display the events for the day of the week using the CalendarCard component */}
               {day.activities.map((info, index) => (
                 <View key={index}>
                   {
@@ -131,6 +139,7 @@ const CalendarNewScreen = () => {
   );
 };
 
+// Define Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
