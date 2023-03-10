@@ -1,6 +1,6 @@
 // Importing necessary libraries and modules
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { View, TextInput, Button, StyleSheet, Text, TouchableOpacity, CheckBox } from 'react-native';
 
 // Creating a functional component called ParentTranslationScreen
 const ParentTranslationScreen = (props) => {

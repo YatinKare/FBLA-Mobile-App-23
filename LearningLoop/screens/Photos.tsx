@@ -15,7 +15,7 @@ const PhotosScreen = (props) => {
 // Returning JSX for Photos screen
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Photos {date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear()}</Text>
+            <Text style={styles.title}>Photos {/*date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear()*/}</Text>
             <View style={styles.lineSeparator} />
             <View style={styles.photoCards}>
                 {data.map((info, index) => (

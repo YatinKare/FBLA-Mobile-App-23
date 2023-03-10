@@ -29,7 +29,7 @@ const TeacherTranslationScreen = (props) => {
         <View style={styles.absenceCards}>
           <View style={styles.containerTwo}>
             <View style={styles.textContainer}>
-              <Text style={styles.recipeint}>Yatin</Text>
+              <Text style={styles.recipeint}>Tejes</Text>
               <Text style={styles.message}>Hola Jennifer. ¿Cómo estás?</Text>
             </View>
           </View>

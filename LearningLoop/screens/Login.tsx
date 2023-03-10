@@ -1,7 +1,7 @@
 // Importing necessary components and libraries
 import React from 'react';
 import { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, ScrollView, Linking, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, ScrollView, Linking, TouchableOpacity, Image } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 // Defining the Props interface that has setUserType function
@@ -34,6 +34,7 @@ const LoginScreen: React.FC<Props> = ({ setUserType }) => {
   // Defining the layout of the component
   return (
     <View style={styles.container}>
+        <Image style={styles.logoImage} source={{uri: 'https://media.discordapp.net/attachments/1065366932469055529/1083860001266880664/Learning_Loop_LOGO.png',}}/>
       <Text style={styles.logo}>Learning Loop</Text>
       <View style={styles.loginContainer}>
         <Text style={styles.loginText}>Login</Text>
@@ -90,8 +91,12 @@ const styles = StyleSheet.create({
   },
   logo: {
     fontSize: 48,
-    marginBottom: 32,
+    marginBottom: 8,
     color: "white",
+  },
+  logoImage: {
+    width: 100,
+    height: 100,
   },
   loginContainer: {
     width: "80%",

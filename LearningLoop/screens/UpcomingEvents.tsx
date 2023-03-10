@@ -5,7 +5,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import imageSource1 from '../assets/dog.jpg';
 import imageSource2 from '../assets/favicon.png';
 import UpcomingEventsCard from '../components/UpcomingEventsCard';
-
+import imageSource3 from '../assets/bus.jpg';
 // Define UpcomingEventsScreen component
 const UpcomingEventsScreen = (props) => {
     // Get current date
@@ -13,12 +13,12 @@ const UpcomingEventsScreen = (props) => {
     // Return screen layout
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Upcoming Events {date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear()}</Text>
+            <Text style={styles.title}>Upcoming Events {/*date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear()*/}3/10/2023</Text>
             <View style={styles.lineSeparator} />
             <View style={styles.upcomingEventsCard}>
                 {/* Pass in props to UpcomingEventsCard component */}
-                <UpcomingEventsCard photo={imageSource1}
-                    title='Dog Day'
+                <UpcomingEventsCard photo={imageSource3}
+                    title='Feild Trip Drop Off'
                     description='We will be having some therapy dogs in our classroom next week. Please let me know if your child is allergic.'
                     style={styles.photoCard} />
             </View>

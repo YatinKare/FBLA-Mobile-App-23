@@ -3,7 +3,9 @@
 {
     "day": "Sunday",
     "activities": [
-       
+       {
+            "title": "Have a good weekend!"
+       }
     ],
     "color": "blue"
 },
@@ -60,7 +62,9 @@
 {
     "day": "Saturday",
     "activities": [
-        
+        {
+            "title": "Have a good weekend!"
+        }
     ],
     "color": "blue"
 }
@@ -72,7 +76,9 @@
 {
     "day": "Sunday",
     "activities": [
-        
+        {
+            "title": "Have a good weekend!"
+        }
     ],
     "color": "blue"
 },
@@ -133,7 +139,9 @@
 {
     "day": "Saturday",
     "activities": [
-        
+        {
+            "title": "Have a good weekend!"
+        }
     ],
     "color": "green"
 }
@@ -208,7 +216,9 @@
     {
         "day": "Saturday",
         "activities": [
-            
+            {
+                "title": "Have a good weekend!"
+            }
         ],
         "color": "green"
     }
@@ -279,7 +289,9 @@
     {
         "day": "Saturday",
         "activities": [
-            
+            {
+                "title": "Nothing"
+            }
         ],
         "color": "green"
     }
