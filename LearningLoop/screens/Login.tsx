@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, ScrollView, Linking, TouchableOpacity } from 'react-native';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 type Props = {
     setUserType: React.Dispatch<React.SetStateAction<string>>;
@@ -69,6 +70,15 @@ type Props = {
             onPress={handleSubmit} // Set the onPress prop to the handleSubmit function
           />
         </View>
+        <View style={styles.socials}>
+        <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com')}>
+          <Ionicons name="logo-instagram" size={32} color="black" style={{ marginHorizontal: 10 }} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => Linking.openURL('https://www.facebook.com')}>
+          <Ionicons name="logo-facebook" size={32} color="black" style={{ marginHorizontal: 10 }} />
+        </TouchableOpacity>
+
+        </View>
       </View>
     );
   };
@@ -110,6 +120,14 @@ type Props = {
       paddingVertical: 8,
       color: "white",
     },
+    socials: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '100%',
+      paddingVertical: 16,
+      paddingHorizontal: 16,
+        },
   });
 
 export default LoginScreen;
