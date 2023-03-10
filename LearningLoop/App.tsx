@@ -1,3 +1,4 @@
+// Import necessary modules and components
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react';
@@ -17,11 +18,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LoginScreen from './screens/Login';
 
+// Create navigation stacks and tabs
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-
-
+// Define the teacher navigation tabs
 function TeacherTabNavigator() {
   return (
     <Tab.Navigator>
@@ -32,6 +33,7 @@ function TeacherTabNavigator() {
   );
 }
 
+// Define the parent navigation tabs
 function ParentTabNavigator() {
   return (
     <Tab.Navigator>
@@ -45,14 +47,17 @@ function ParentTabNavigator() {
   );
 }
 
+// Main app component
 export default function App() {
+  // Define the type of user as either teacher or parent
   type UserType = 'teacher' | 'parent';
   const [userType, setUserType] = useState<UserType>();
-
+  // Handle the login functionality
   const handleLogin = () => {
     setUserType(selectedUserType);
   };
 
+  // Render the appropriate navigation depending on user type
   return (
   <NavigationContainer>
       {userType ? (
@@ -70,27 +75,9 @@ export default function App() {
       )}
     </NavigationContainer>
   );
-
-  return (
-    <UpdatePhotosScreen />
-  );
-
-
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <View>
-        <Text>Calendar</Text>
-        <Text>Home</Text>
-        <Text>Settings</Text>
-        <Text>Translator</Text>
-        <Text>UpcomingEvents</Text>
-      </View>
-      <StatusBar style="auto" />
-    </View>
-  );
 }
 
+// Define styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
