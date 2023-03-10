@@ -127,11 +127,6 @@ const CalendarNewScreen = () => {
           ))}
         </View>
           </ScrollView>
-
-
-      {/*<View style={styles.calendarCard}>
-        <CalendarCard title='dATE WITH ASAH' time='SOMEDAY IN THE FUTURE' bannerColor='blue'/>
-        </View>*/}
     </View>
   );
 };
